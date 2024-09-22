@@ -100,7 +100,6 @@ void loop() {
   mqtt_client.loop();
   if (WiFi.status() != WL_CONNECTED) {
     connect();               // this activates our event
-    mqtt_client.setOptions(60 , true , 99999);
     mqtt_client.onMessage(messageReceived);
     mqtt_client.subscribe(TOPIC_PREFIX + mqtt_client_id);
     mqtt_client.subscribe("/:::::/#"); 
